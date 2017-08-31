@@ -54,7 +54,7 @@ int main (int argc, char *argv[]) {
         print_err_msg("getgid");
     while (1) {
         in_data->live_time = time(NULL) - start_time;
-        if (getloadavg(in_data->load_avg, 3) < 0)
+        if (getloadavg(in_data->load_avg, 3) == -1)
             print_err_msg("getloadavg");
         sleep(1);
     }
